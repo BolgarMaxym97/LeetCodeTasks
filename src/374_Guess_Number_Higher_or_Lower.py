@@ -13,16 +13,12 @@ def guess(num: int) -> int:
     return 1
 class Solution:
     def guessNumber(self, n: int) -> int:
-        if guess(n) == 0:
-            return n
-        while True:
-            mid = n // 2
-            if guess(mid) == 0:
-                return mid
-            elif guess(mid) == 1:
-                n = int((mid + n))
-            else:
-                n = int((n - mid))
-        return 0
+        l, r, check = 1, n, 1
+        while check != 0:
+            mid = (l + r) / 2
+            check = guess(mid)
+            if check == 1: l = mid + 1
+            else: r = mid - 1
+        return int(mid)
 
 print(Solution.guessNumber(Solution, 10))
