@@ -5,7 +5,6 @@ import (
 	"sort"
 )
 
-// TODO
 func countPairs(nums []int, target int) int {
 	sort.Slice(nums, func(i, j int) bool {
 		return nums[i] < nums[j]
