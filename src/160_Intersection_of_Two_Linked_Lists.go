@@ -7,6 +7,10 @@ type ListNode struct {
 	Next *ListNode
 }
 
+// Key takeaway:
+// If the linked lists have different lengths, we need to compensate for the difference.
+// First, traverse your own list, then switch to the other list.
+// This ensures they "sync up" and meet at the intersection point.
 func getIntersectionNode(headA, headB *ListNode) *ListNode {
 	if headA == nil || headB == nil {
 		return nil
